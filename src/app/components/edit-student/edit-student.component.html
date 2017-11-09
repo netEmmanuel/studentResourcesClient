@@ -1,0 +1,203 @@
+<div class="row">
+    <div class="col-md-6">
+      <a [routerLink]="['/students-details/'+id]" href="#" class="btn btn-secondary myedit"><i class="fa fa-arrow-circle-o-left"></i> Back To Details</a>
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+<mat-card class="demo-card demo-basic">
+    <mat-toolbar color="primary">Edit Student Resource  </mat-toolbar>
+    <span class="myspan"> Click any field to start editing</span> 
+    <mat-card-content>
+        <form novalidate #fm="ngForm" (ngSubmit)="editStudent(fm)">
+        <mat-form-field class="demo-full-width">
+          <input matInput 
+          placeholder="Name Of Institution" 
+          name="nameofschl" 
+          [(ngModel)]="studs.nameofschl"
+         
+          required>
+           <mat-error>This field is required</mat-error>
+        </mat-form-field>
+  
+        <table style="width: 100%" cellspacing="1px">
+            <tr>
+                <td>
+                    <mat-form-field color="primary" style="width: 90%" >
+                        <input matInput placeholder="First name" name="firstname"
+                        [(ngModel)]="studs.firstname" [value]="studs.firstname"  required>
+                        <mat-error>This field is required</mat-error>
+                      </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field color="accent" style="width: 90%">
+                        <input matInput placeholder="Middle name" name="middlename"
+                        [(ngModel)]="studs.middlename" [value]="studs.middlename" required>
+                        <mat-error>This field is required</mat-error>
+                      </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field color="warn" style="width: 90%">
+                        <input matInput placeholder="Last name" 
+                          name="lastname"
+                          [(ngModel)]="studs.lastname"
+                          [value]="studs.lastname" required>
+                        <mat-error>This field is required</mat-error>
+                      </mat-form-field>
+                </td>
+              </tr>
+          <tr>
+      </table>
+      <table style="width: 100%" cellspacing="0">
+          <tr>
+          <td>
+            <mat-form-field  style="width: 90%">
+                <mat-select placeholder="Department" 
+                  [(ngModel)]="studs.department" 
+                  name="department" required>
+                  <mat-option *ngFor="let department of departments"  
+                  [value]="department.name">{{department.name}}</mat-option>
+                </mat-select>
+                <mat-error>This field is required</mat-error>
+            </mat-form-field>
+          </td>
+          <td>
+              <mat-form-field style="width: 90%">
+                  <mat-select placeholder="Faculty" 
+                  [(ngModel)]="studs.faculty" name="faculty" required>
+                      <mat-option *ngFor="let faculty of facultys" [value]= "faculty.name">
+                        {{ faculty.name }}
+                      </mat-option>
+                    </mat-select>
+                <mat-error>This field is required</mat-error>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field style="width: 90%">
+                  <mat-select placeholder="Level" 
+                    [(ngModel)]="studs.level" name="level" required>
+                      <mat-option *ngFor="let level of levels" [value]="level.value">
+                        {{ level.value }}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error>This field is required</mat-error>
+              </mat-form-field>
+            </td>
+            
+        </tr>
+      </table>
+        <p>
+          <mat-form-field class="demo-full-width">
+            <textarea matInput placeholder="Address" 
+              [(ngModel)]="studs.address"
+              [value]="studs.address"
+              name="address"></textarea>
+          </mat-form-field>
+        </p>
+        <table style="width: 100%" cellspacing="0">
+          <tr>
+          <td>
+            <mat-form-field  style="width: 85%">
+                <mat-select placeholder="State  Of Origin" 
+                    [(ngModel)]="studs.stateorigin" 
+                    name="stateorigin" required>
+                    <mat-option *ngFor="let state of states" [value]="state.name">
+                      {{ state.name }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>This field is required</mat-error>
+            </mat-form-field>
+          </td>
+          <td>
+              <mat-form-field style="width: 90%">
+                  <mat-select placeholder="Gender" 
+                    [(ngModel)]="studs.gender" 
+                    name="gender" required>
+                      <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                        {{ gender.viewvalue }}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error>This field is required</mat-error>
+              </mat-form-field>
+            </td>
+            
+        </tr>
+      </table>
+      <table style="width: 100%" cellspacing="1px">
+         <tr>
+          <td>
+            <mat-form-field style="width:95%" >
+              <input  matInput placeholder="Email" 
+              [(ngModel)]="studs.email" 
+              [value]="studs.email" 
+              name="email">
+              
+            </mat-form-field>
+          </td>
+          <td>
+              <mat-form-field style="width:95%" >
+              <span matPrefix>+234&nbsp;</span>
+              <input type="tel" matInput #phonenumber maxlength="10" 
+                placeholder="Phone Number" 
+                [(ngModel)]="studs.phonenum" 
+                [value]="studs.phonenum" 
+               [errorStateMatcher]="customErrorStateMatcher" name="phonenum" required>
+               <mat-error>This field is required</mat-error>
+              <mat-hint align="end">{{phonenumber.value.length}} / 10</mat-hint>
+              <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
+              
+            </mat-form-field>
+          </td>
+          <td>
+              <mat-form-field style="width:95%">
+                  <input matInput
+                         [matDatepicker]="birthdayPicker"
+                         [(ngModel)]="studs.dateofbirth"
+                         [value]="studs.dateofbirth"
+                         name="dateofbirth"
+                         #birthdayModel="ngModel"
+                         [max]="maxBirthday"
+                         required
+                         placeholder="Date of birth">
+                  <mat-datepicker-toggle matSuffix [for]="birthdayPicker"></mat-datepicker-toggle>
+                  <mat-datepicker #birthdayPicker startView="year"></mat-datepicker>
+                  <mat-error *ngIf="birthdayModel.hasError('required')">
+                    Please choose a date.
+                  </mat-error>
+                  <mat-error *ngIf="birthdayModel.hasError('matDatepickerMax')">
+                    Please choose an earlier date.
+                  </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+      </table>
+      <table style="width: 100%" cellspacing="1px">
+          <tr>
+           <td>
+             <mat-form-field style="width:30%" >
+               <input matInput #cgpa maxlength="4" 
+               [(ngModel)]="studs.cgpa" [value]="studs.cgpa" name="cgpa" placeholder="CGPA" type="number" required>
+               <mat-error>This field is required</mat-error>
+               <mat-hint align="end">{{cgpa.value.length}} / 4</mat-hint>
+             </mat-form-field>
+           </td>
+           
+         </tr>
+       </table>
+       <p>
+          <button color="primary" type="submit" mat-raised-button>Submit</button>
+        </p>
+      </form>
+      
+    </mat-card-content>
+  </mat-card>
+  
+  
+  <!-- <select (click)="onSelect($event.target.value)">
+    <option *ngFor="let department of departments" value= {{department.id}}>{{department.name}}</option>
+  </select> -->
+  
+  <br/><br/>
+  
+  
+  

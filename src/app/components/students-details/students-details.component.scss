@@ -1,0 +1,30 @@
+.myedit{
+    text-decoration-color: #000000;
+    color: black;
+    background-color:#ffffff
+}
+.adjust{
+  width: 100px;
+}
+.demo-card-container {
+    display: flex;
+    flex-flow: column nowrap;
+  
+    .mat-card {
+      margin: 0 16px 16px 0;
+      
+    }
+  
+    img {
+      background-color: gray;
+    }
+  }
+  
+  .demo-card-blue {
+    background-color: #b0becc;
+  
+    .mat-card-actions {
+      display: flex;
+      flex-direction: column;
+    }
+  }

@@ -1,0 +1,50 @@
+
+        <div class="row">
+            <div class="col-md-12">
+                    <a [routerLink]="['/add-student']" 
+                   class="btn btn-secondary btn-md pull-right addbtn">
+                   Add New Student</a>
+           </div>
+            <div class="col-md-12">
+                <div class="card" style="margin-top:50px">
+                    <div class="card-header" style="background-color:#3f51b5">
+                        <h4 class="title">Student Resources</h4>
+                        <p class="category">View Details and Edit Student Resources</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table class="table" *ngIf="studs?.length > 0;else nostuds" >
+                            <thead>
+                              <th class="text-center">Name</th>                                         
+                              <th class="text-center">Gender</th>
+                               <th class="text-center">Email</th>
+                               <th class="text-center">Phone Number</th>
+                               <th class="text-center">Department</th>
+                               <th class="text-center">Faculty</th>
+                               <th class="text-center">Level</th>
+                               <th class="text-center">CGPA</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let stud of studs">
+                                  <td class="text-primary text-center"> {{stud.firstname}} {{stud.lastname}}</td>
+                                  <td class="text-center">{{stud.gender}}</td>
+                                  <td class="text-center">{{stud.email}}</td>
+                                  <td class="text-center">+234{{stud.phonenum}}</td>
+                                  <td class="text-center">{{stud.department}}</td>
+                                  <td class="text-center">{{stud.faculty}}</td>
+                                  <td class="text-center">{{stud.level}}</td>
+                                  <td class="text-center">{{stud.cgpa}}</td>
+                                  <td><a 
+                                    [routerLink]="['/students-details/'+stud.id]" 
+                                    href="" class="btn btn-secondary btn-sm" style="background-color:#3fb5a1">
+                                     Details</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ng-template #nostuds>
+                                <hr>
+                                <h5>There are no students in the system</h5>
+                    </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
