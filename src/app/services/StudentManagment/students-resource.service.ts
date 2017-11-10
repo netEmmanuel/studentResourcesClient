@@ -7,21 +7,25 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class StudentsResourceService {
+  urlPrefix: string;
 
   constructor( public http:Http) {
     
         console.log('Student Resource Service connected')
+        this.urlPrefix = 'https://student-resource-managmentapp.herokuapp.com';
+        // this.urlPrefix = 'http://localhost:3000';
+        
       }
     //retrive all students
     getstudents(){
-      return this.http.get('http://localhost:3000/api/studs')
+      return this.http.get(this.urlPrefix + '/api/studs')
       .map(res=> res.json());
     }
     //save a new student
     poststudents(stud){
       let headers = new Headers();
       headers.append('content-type', 'application/json');
-      return this.http.post('http://localhost:3000/api/stud', JSON.stringify(stud), {headers:headers})
+      return this.http.post(this.urlPrefix +'/api/stud', JSON.stringify(stud), {headers:headers})
       .map(res=> res.json());
     }
 
@@ -29,18 +33,18 @@ export class StudentsResourceService {
     updatestudents(id:any, stud){
       let headers = new Headers();
       headers.append('content-type', 'application/json');
-      return this.http.put('http://localhost:3000/api/stud/'+ id, JSON.stringify(stud), {headers:headers})
+      return this.http.put(this.urlPrefix +'/api/stud/'+ id, JSON.stringify(stud), {headers:headers})
       .map(res=> res.json());
     }
     //delete a student
     delstudents(id:any){
-      return this.http.delete('http://localhost:3000/api/stud/' + id)
+      return this.http.delete(this.urlPrefix +'/api/stud/' + id)
       .map(res=> res.json());
     }
 
      //get single a student
      getsinglestud(id:any){
-      return this.http.get('http://localhost:3000/api/stud/' + id)
+      return this.http.get(this.urlPrefix +'/api/stud/' + id)
       .map(res=> res.json());
     }
     // getstudentsmodel(){ 
