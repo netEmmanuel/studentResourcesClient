@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "material-application"
+    "name": "student_resource"
   },
   "apps": [
     {
@@ -27,7 +27,7 @@
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "../node_modules/bootstrap-notify/bootstrap-notify.js"
+        "../src/assets/js/bootstrap-notify.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

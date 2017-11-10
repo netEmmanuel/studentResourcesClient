@@ -65,7 +65,6 @@ export class EditStudentComponent implements OnInit {
   showNotification(from, align){
     const type = ['success'];
     $.notify({
-        icon: "notifications",
         message: "Student Succesfully Updated"
     },{
         type: type,
