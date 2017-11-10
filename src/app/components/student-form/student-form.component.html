@@ -135,7 +135,7 @@
         <td>
             <mat-form-field style="width:95%" >
             <span matPrefix>+234&nbsp;</span>
-            <input type="tel" matInput #phonenumber maxlength="10" 
+            <input type="tel" (keypress)="_keyPress($event)" matInput #phonenumber maxlength="10" 
               placeholder="Phone Number" 
               [(ngModel)]="stud.phonenum" 
              [errorStateMatcher]="customErrorStateMatcher" name="myphonenumber" required>
