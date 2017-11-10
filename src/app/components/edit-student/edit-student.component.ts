@@ -39,6 +39,16 @@ export class EditStudentComponent implements OnInit {
     public router:Router,
     public route:ActivatedRoute,) { }
 
+    _keyPress(event: any) {
+      const pattern = /[0-9\+\-\ ]/;
+      let inputChar = String.fromCharCode(event.charCode);
+  
+      if (!pattern.test(inputChar)) {
+        // invalid character, prevent input
+        event.preventDefault();
+      }
+  }
+
   ngOnInit() {
     //  Get ID
     this.id = this.route.snapshot.params['id'];
