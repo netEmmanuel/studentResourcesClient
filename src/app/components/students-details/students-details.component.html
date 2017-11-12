@@ -8,17 +8,33 @@
   <section>
       <h2>Student Details</h2>
       <mat-card class="example-card">
-        <!-- <mat-card-header>
+        <mat-card-header>
           <img mat-card-avatar src="../assets/shiba-inu-avatar.jpg" aria-label="Shiba Inu avatar">
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header> -->
-        <img mat-card-image  src="../assets/shiba-inu.jpg" aria-label="Shiba Inu">
+          <mat-card-title>{{studs.firstname}}</mat-card-title>
+          <mat-card-subtitle>Student</mat-card-subtitle>
+        </mat-card-header>
+        <!-- <img mat-card-image  src="../assets/shiba-inu.jpg" aria-label="Shiba Inu"> -->
         <mat-card-content>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
-        </mat-card-content>
+            <div class="row">
+                <h3 class="card-header">{{studs.firstname}} {{studs.middlename}} {{studs.lastname}}</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Name of School: {{studs.nameofschl}}</li>
+                        <li class="list-group-item" *ngIf="studs.gender =='M';">Gender: Male </li>
+                        <li class="list-group-item" *ngIf="studs.gender =='F';">Gender: Female </li>
+                        <li class="list-group-item">Address: {{studs.address}}</li>
+                        <li class="list-group-item">State of Origin: {{studs.stateorigin}}</li>
+                        <li class="list-group-item">Date of Birth:{{studs.dateofbirth | date:'fullDate'}}</li>
+                        <li class="list-group-item">Department: {{studs.department}}</li>
+                        <li class="list-group-item">Faculty: {{studs.faculty}}</li>
+                        <li class="list-group-item">Level: {{studs.level}}</li>
+                        <li class="list-group-item">CGPA: {{studs.cgpa}}</li>
+                        <li class="list-group-item">Phone Number: +234{{studs.phonenum}}</li>
+                        <li class="list-group-item">Email: {{studs.email}}</li>
+                      </ul>
+                    <h3>
+                    </h3>
+                    </div>
+  </mat-card-content>
         <mat-card-actions align="center">
             <div class="btn-group">
           <a [routerLink]="['/edit-student/'+id]" class="btn btn-secondary myedit">Edit</a>

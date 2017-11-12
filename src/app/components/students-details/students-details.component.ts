@@ -65,7 +65,7 @@ onDeleteClick(){
       // console.log(stud.message);
       this.router.navigate(['/']);
       })
-    this.showNotification('top', 'right')
+    this.showNotification('top', 'center')
   }
 }
 }

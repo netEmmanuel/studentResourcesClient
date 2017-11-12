@@ -76,7 +76,7 @@ export class StudentFormComponent {
         this.studs.push(stud)
         // console.log(stud.message);
         this.router.navigate(['/']);
-        this.showNotification('top', 'right')
+        this.showNotification('top', 'center')
         })
     }
   }
@@ -103,11 +103,157 @@ export class StudentFormComponent {
     // this.facultys = this.studentsResourceService.getFaculty().filter((item)=> item.countryid == countryid);
   // }
 
-    states = [
-              {name: 'Abia'},
-              {name: 'Adamawa'},
-  
-  ];
+  states = [
+    {
+    "id": 1,
+    "name": "Abia State"
+  },
+  {
+    "id": 2,
+    "name": "Adamawa State"
+  },
+  {
+    "id": 3,
+    "name": "Akwa Ibom State"
+  },
+  {
+    "id": 4,
+    "name": "Anambra State"
+  },
+  {
+    "id": 5,
+    "name": "Bauchi State"
+  },
+  {
+    "id": 6,
+    "name": "Bayelsa State"
+  },
+  {
+    "id": 7,
+    "name": "Benue State"
+  },
+  {
+    "id": 8,
+    "name": "Borno State"
+  },
+  {
+    "id": 9,
+    "name": "Cross River State"
+  },
+  {
+    "id": 10,
+    "name": "Delta State"
+  },
+  {
+    "id": 11,
+    "name": "Ebonyi State"
+  },
+  {
+    "id": 12,
+    "name": "Edo State"
+  },
+  {
+    "id": 13,
+    "name": "Ekiti State"
+  },
+  {
+    "id": 14,
+    "name": "Enugu State"
+  },
+  {
+    "id": 15,
+    "name": "Federal Capital Territory"
+  },
+  {
+    "id": 16,
+    "name": "Gombe State"
+  },
+  {
+    "id": 17,
+    "name": "Imo State"
+  },
+  {
+    "id": 18,
+    "name": "Jigawa State"
+  },
+  {
+    "id": 19,
+    "name": "Kaduna State"
+  },
+  {
+    "id": 20,
+    "name": "Kano State"
+  },
+  {
+    "id": 21,
+    "name": "Katsina State"
+  },
+  {
+    "id": 22,
+    "name": "Kebbi State"
+  },
+  {
+    "id": 23,
+    "name": "Kogi State"
+  },
+  {
+    "id": 24,
+    "name": "Kwara State"
+  },
+  {
+    "id": 25,
+    "name": "Lagos State"
+  },
+  {
+    "id": 26,
+    "name": "Nasarawa State"
+  },
+  {
+    "id": 27,
+    "name": "Niger State"
+  },
+  {
+    "id": 28,
+    "name": "Ogun State"
+  },
+  {
+    "id": 29,
+    "name": "Ondo State"
+  },
+  {
+    "id": 30,
+    "name": "Osun State"
+  },
+  {
+    "id": 31,
+    "name": "Oyo State"
+  },
+  {
+    "id": 32,
+    "name": "Plateau State"
+  },
+  {
+    "id": 33,
+    "name": "Rivers State"
+  },
+  {
+    "id": 34,
+    "name": "Sokoto State"
+  },
+  {
+    "id": 35,
+    "name": "Taraba State"
+  },
+  {
+    "id": 36,
+    "name": "Yobe State"
+  },
+  {
+    "id": 37,
+    "name": "Zamfara State"
+  }
+
+];
   
   genders = [
             {value: 'M', viewvalue: 'Male'},
