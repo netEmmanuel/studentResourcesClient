@@ -53,6 +53,7 @@ import {DataService} from './services/data.service';
 import { StudentsDetailsComponent } from './components/students-details/students-details.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 const appRoutes:Routes=[ 
@@ -69,7 +70,8 @@ const appRoutes:Routes=[
     StudentFormComponent,
     StudentsDetailsComponent,
     DashboardComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    NavbarComponent
     
   ],
   imports: [
