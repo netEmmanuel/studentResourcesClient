@@ -9,10 +9,10 @@ declare var $: any;
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 @Component({
     moduleId: module.id,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'edit-student',
-  templateUrl: './edit-student.component.html',
-  styleUrls: ['./edit-student.component.css']
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'edit-student',
+    templateUrl: './edit-student.component.html',
+    styleUrls: ['./edit-student.component.css']
 })
 export class EditStudentComponent implements OnInit {
   id: number;
